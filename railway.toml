@@ -1,0 +1,16 @@
+# Railway service config for the pulse pipeline worker (optional Option B).
+# Create a separate Railway service from this repo; keep MCP on gmail-docs-mcp-server.
+#
+# Required variables: EMAIL_RECIPIENT, GOOGLE_DOC_ID (or GOOGLE_DOC_URL),
+# MCP_HTTP_BEARER_TOKEN, MCP_BASE_URL
+# Optional: DELIVER, FETCH_REVIEWS, USE_SAMPLE, MAX_REVIEWS, WINDOW_WEEKS
+#
+# Schedule via Railway Cron to run the start command monthly.
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "bash scripts/railway_run.sh"
+restartPolicyType = "NEVER"

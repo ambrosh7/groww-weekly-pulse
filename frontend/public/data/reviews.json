@@ -1,362 +1,272 @@
 [
   {
-    "review_id": "gp-001",
+    "review_id": "c3d45cbc4df359c5",
     "rating": 2,
     "text": "KYC keeps failing at the selfie step and support just asks to try again tomorrow.",
-    "date": "2026-10-08",
-    "locale": "en_IN",
-    "theme_id": "kyc",
-    "theme_label": "KYC / verification"
-  },
-  {
-    "review_id": "gp-002",
-    "rating": 1,
-    "text": "Withdrawal to bank took more than three days with no clear status in the app.",
     "date": "2026-10-07",
     "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
+    "theme_id": "kyc",
+    "theme_label": "KYC / verification"
   },
   {
-    "review_id": "gp-003",
-    "rating": 5,
-    "text": "Buying mutual funds is simple and the UI is clean for beginners.",
+    "review_id": "23018eaa558eb4a8",
+    "rating": 1,
+    "text": "Withdrawal to bank took more than three days with no clear status in the app.",
     "date": "2026-10-06",
     "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
+    "theme_id": "withdrawals",
+    "theme_label": "Withdrawals / settlements / statements"
   },
   {
-    "review_id": "gp-004",
-    "rating": 2,
-    "text": "UPI mandate for SIP failed twice even though my bank app showed success.",
+    "review_id": "5ca134c313d68f03",
+    "rating": 5,
+    "text": "Buying mutual funds is simple and the UI is clean for beginners.",
     "date": "2026-10-05",
     "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
+    "theme_id": "trading",
+    "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-005",
+    "review_id": "5397eb03824a3db0",
+    "rating": 2,
+    "text": "UPI mandate for SIP failed twice even though my bank app showed success.",
+    "date": "2026-10-04",
+    "locale": "en_IN",
+    "theme_id": "payments",
+    "theme_label": "Payments / UPI / deposits"
+  },
+  {
+    "review_id": "347837cd30032113",
     "rating": 3,
     "text": "Charts freeze when I switch between stocks quickly during market hours.",
-    "date": "2026-10-03",
+    "date": "2026-10-02",
     "locale": "en_IN",
     "theme_id": "trading",
     "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-006",
+    "review_id": "38475cd3559908db",
     "rating": 1,
     "text": "Account opening stuck after PAN upload for almost a week.",
-    "date": "2026-10-01",
+    "date": "2026-09-30",
     "locale": "en_IN",
     "theme_id": "onboarding",
     "theme_label": "Onboarding / signup"
   },
   {
-    "review_id": "gp-007",
+    "review_id": "f4418bb9a702989d",
     "rating": 4,
     "text": "Customer care resolved my demat mapping issue in one chat.",
-    "date": "2026-09-29",
-    "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
-  },
-  {
-    "review_id": "gp-008",
-    "rating": 2,
-    "text": "Order placement shows pending then cancels without explaining why.",
     "date": "2026-09-28",
     "locale": "en_IN",
+    "theme_id": "onboarding",
+    "theme_label": "Onboarding / signup"
+  },
+  {
+    "review_id": "ac6895437db4b9f2",
+    "rating": 2,
+    "text": "Order placement shows pending then cancels without explaining why.",
+    "date": "2026-09-27",
+    "locale": "en_IN",
     "theme_id": "trading",
     "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-009",
+    "review_id": "2c28331b0a787bd3",
     "rating": 1,
     "text": "Cannot complete Aadhaar eSign for KYC on Android 14.",
-    "date": "2026-09-26",
-    "locale": "en_IN",
-    "theme_id": "kyc",
-    "theme_label": "KYC / verification"
-  },
-  {
-    "review_id": "gp-010",
-    "rating": 5,
-    "text": "Loved the IPO apply flow this week very straightforward.",
     "date": "2026-09-25",
     "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
+    "theme_id": "kyc",
+    "theme_label": "KYC / verification"
   },
   {
-    "review_id": "gp-011",
+    "review_id": "378138ee7b8aeaf2",
+    "rating": 5,
+    "text": "Loved the IPO apply flow this week very straightforward.",
+    "date": "2026-09-24",
+    "locale": "en_IN",
+    "theme_id": "trading",
+    "theme_label": "Trading / orders / quotes"
+  },
+  {
+    "review_id": "baedab22c95a1e60",
     "rating": 2,
     "text": "Add money via netbanking redirects and then balance does not update.",
-    "date": "2026-09-22",
+    "date": "2026-09-21",
     "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
+    "theme_id": "payments",
+    "theme_label": "Payments / UPI / deposits"
   },
   {
-    "review_id": "gp-012",
+    "review_id": "72089e80730e6188",
     "rating": 3,
     "text": "Statements are hard to find and the PDF download fails on mobile data.",
-    "date": "2026-09-20",
+    "date": "2026-09-19",
     "locale": "en_IN",
     "theme_id": "withdrawals",
     "theme_label": "Withdrawals / settlements / statements"
   },
   {
-    "review_id": "gp-013",
+    "review_id": "bcf20164881454c7",
     "rating": 1,
     "text": "Bank withdrawal rejected saying invalid IFSC though it is correct.",
-    "date": "2026-09-18",
+    "date": "2026-09-17",
     "locale": "en_IN",
     "theme_id": "withdrawals",
     "theme_label": "Withdrawals / settlements / statements"
   },
   {
-    "review_id": "gp-014",
+    "review_id": "d08e61edbe753571",
     "rating": 4,
     "text": "Watchlist and price alerts work well for my portfolio.",
-    "date": "2026-09-16",
+    "date": "2026-09-15",
     "locale": "en_IN",
     "theme_id": "trading",
     "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-015",
+    "review_id": "4280b53d9acab923",
     "rating": 2,
     "text": "Onboarding asks for the same address proof twice after I already uploaded it.",
-    "date": "2026-09-14",
+    "date": "2026-09-13",
     "locale": "en_IN",
     "theme_id": "onboarding",
     "theme_label": "Onboarding / signup"
   },
   {
-    "review_id": "gp-016",
+    "review_id": "c062467b3a9162ca",
     "rating": 1,
     "text": "Live prices lag by minutes compared with other brokers.",
-    "date": "2026-09-12",
+    "date": "2026-09-11",
     "locale": "en_IN",
-    "theme_id": "trading",
-    "theme_label": "Trading / orders / quotes"
+    "theme_id": "onboarding",
+    "theme_label": "Onboarding / signup"
   },
   {
-    "review_id": "gp-017",
+    "review_id": "b4c2afc2fe359093",
     "rating": 5,
     "text": "SIP setup for index funds took under two minutes.",
-    "date": "2026-09-10",
+    "date": "2026-09-09",
     "locale": "en_IN",
-    "theme_id": "payments",
-    "theme_label": "Payments / funding / SIP"
+    "theme_id": "trading",
+    "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-018",
+    "review_id": "8aca40bfd5f58e78",
     "rating": 2,
     "text": "Payment status stuck on processing after UPI collect request expired.",
-    "date": "2026-09-08",
+    "date": "2026-09-07",
     "locale": "en_IN",
     "theme_id": "payments",
-    "theme_label": "Payments / funding / SIP"
+    "theme_label": "Payments / UPI / deposits"
   },
   {
-    "review_id": "gp-019",
+    "review_id": "3edb901529a25d9a",
     "rating": 3,
     "text": "App crashes when opening F&O option chain on mid-range phones.",
-    "date": "2026-09-05",
+    "date": "2026-09-04",
     "locale": "en_IN",
     "theme_id": "trading",
     "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-020",
+    "review_id": "13f3ffff59cb1d13",
     "rating": 1,
     "text": "KYC shows verified on web but mobile still blocks trading.",
-    "date": "2026-09-03",
+    "date": "2026-09-02",
     "locale": "en_IN",
     "theme_id": "kyc",
     "theme_label": "KYC / verification"
   },
   {
-    "review_id": "gp-021",
+    "review_id": "43a8ee38619addb6",
     "rating": 2,
     "text": "Settlement of equity sell credit is unclear in the balance breakdown.",
-    "date": "2026-09-01",
+    "date": "2026-08-31",
     "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
+    "theme_id": "trading",
+    "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-022",
-    "rating": 4,
-    "text": "Good educational content for first-time mutual fund investors.",
-    "date": "2026-08-29",
-    "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
-  },
-  {
-    "review_id": "gp-023",
+    "review_id": "c7943925dcac4180",
     "rating": 1,
     "text": "Unable to place GTT order it keeps saying something went wrong.",
-    "date": "2026-08-27",
+    "date": "2026-08-26",
     "locale": "en_IN",
     "theme_id": "trading",
     "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-024",
+    "review_id": "f3e9d9f5a8599aa8",
     "rating": 2,
     "text": "Signup OTP never arrives and resend is disabled for ten minutes.",
-    "date": "2026-08-25",
+    "date": "2026-08-24",
     "locale": "en_IN",
     "theme_id": "onboarding",
     "theme_label": "Onboarding / signup"
   },
   {
-    "review_id": "gp-025",
+    "review_id": "70fa1ee76b570b8f",
     "rating": 3,
     "text": "Portfolio gains look wrong after a corporate action for one stock.",
-    "date": "2026-08-22",
-    "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
-  },
-  {
-    "review_id": "gp-026",
-    "rating": 5,
-    "text": "Fast account funding with UPI when it works.",
-    "date": "2026-08-20",
-    "locale": "en_IN",
-    "theme_id": "payments",
-    "theme_label": "Payments / funding / SIP"
-  },
-  {
-    "review_id": "gp-027",
-    "rating": 1,
-    "text": "Withdrawal initiated but money never reached my salary account.",
-    "date": "2026-08-18",
-    "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
-  },
-  {
-    "review_id": "gp-028",
-    "rating": 2,
-    "text": "DigiLocker KYC fetch fails and there is no offline upload alternative shown.",
-    "date": "2026-08-15",
-    "locale": "en_IN",
-    "theme_id": "kyc",
-    "theme_label": "KYC / verification"
-  },
-  {
-    "review_id": "gp-029",
-    "rating": 4,
-    "text": "Clean design for tracking SIPs and goals.",
-    "date": "2026-08-13",
-    "locale": "en_IN",
-    "theme_id": "kyc",
-    "theme_label": "KYC / verification"
-  },
-  {
-    "review_id": "gp-030",
-    "rating": 2,
-    "text": "Market depth screen is blank during the first fifteen minutes after open.",
-    "date": "2026-08-11",
+    "date": "2026-08-21",
     "locale": "en_IN",
     "theme_id": "trading",
     "theme_label": "Trading / orders / quotes"
   },
   {
-    "review_id": "gp-031",
+    "review_id": "640a3bf97495e978",
     "rating": 1,
-    "text": "Payments page loops after selecting my bank for adding funds.",
-    "date": "2026-08-08",
+    "text": "Withdrawal initiated but money never reached my salary account.",
+    "date": "2026-08-17",
     "locale": "en_IN",
     "theme_id": "withdrawals",
     "theme_label": "Withdrawals / settlements / statements"
   },
   {
-    "review_id": "gp-032",
-    "rating": 3,
-    "text": "Need clearer messaging when an IPO bid is not accepted.",
-    "date": "2026-08-06",
-    "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
-  },
-  {
-    "review_id": "gp-033",
+    "review_id": "3cf001247154c008",
     "rating": 2,
-    "text": "Re-KYC banner blocks the home screen even after documents were submitted.",
-    "date": "2026-08-04",
+    "text": "DigiLocker KYC fetch fails and there is no offline upload alternative shown.",
+    "date": "2026-08-14",
     "locale": "en_IN",
     "theme_id": "kyc",
     "theme_label": "KYC / verification"
   },
   {
-    "review_id": "gp-034",
-    "rating": 5,
-    "text": "Switched from another broker onboarding was smoother than expected.",
-    "date": "2026-08-01",
+    "review_id": "1f578916c9ce5602",
+    "rating": 2,
+    "text": "Market depth screen is blank during the first fifteen minutes after open.",
+    "date": "2026-08-10",
     "locale": "en_IN",
     "theme_id": "onboarding",
     "theme_label": "Onboarding / signup"
   },
   {
-    "review_id": "gp-035",
+    "review_id": "dac218e2635db254",
     "rating": 1,
-    "text": "Cannot download account statement for last quarter from the app.",
-    "date": "2026-07-30",
-    "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
-  },
-  {
-    "review_id": "gp-036",
-    "rating": 2,
-    "text": "Limit order fills late and the app shows a confusing average price.",
-    "date": "2026-07-28",
-    "locale": "en_IN",
-    "theme_id": "trading",
-    "theme_label": "Trading / orders / quotes"
-  },
-  {
-    "review_id": "gp-037",
-    "rating": 4,
-    "text": "Notifications for order executed are timely.",
-    "date": "2026-07-25",
-    "locale": "en_IN",
-    "theme_id": "trading",
-    "theme_label": "Trading / orders / quotes"
-  },
-  {
-    "review_id": "gp-038",
-    "rating": 1,
-    "text": "UPI autopay for SIP cancelled itself without notifying me.",
-    "date": "2026-07-22",
+    "text": "Payments page loops after selecting my bank for adding funds.",
+    "date": "2026-08-07",
     "locale": "en_IN",
     "theme_id": "payments",
-    "theme_label": "Payments / funding / SIP"
+    "theme_label": "Payments / UPI / deposits"
   },
   {
-    "review_id": "gp-039",
-    "rating": 2,
-    "text": "Help section does not explain why my withdrawal is under review.",
-    "date": "2026-07-20",
-    "locale": "en_IN",
-    "theme_id": "withdrawals",
-    "theme_label": "Withdrawals / settlements / statements"
-  },
-  {
-    "review_id": "gp-040",
+    "review_id": "e771d130c8ff1b98",
     "rating": 3,
-    "text": "Search for stocks sometimes shows stale results until I force close the app.",
-    "date": "2026-07-17",
+    "text": "Need clearer messaging when an IPO bid is not accepted.",
+    "date": "2026-08-05",
     "locale": "en_IN",
-    "theme_id": "other",
-    "theme_label": "Other"
+    "theme_id": "trading",
+    "theme_label": "Trading / orders / quotes"
+  },
+  {
+    "review_id": "dfab1e5e904abe73",
+    "rating": 2,
+    "text": "Re-KYC banner blocks the home screen even after documents were submitted.",
+    "date": "2026-08-03",
+    "locale": "en_IN",
+    "theme_id": "kyc",
+    "theme_label": "KYC / verification"
   }
 ]

@@ -24,6 +24,9 @@ Recorded during foundations setup. Update when choices change.
 | Delivery defaults | `publish_to_docs` / `send_email` **false** | Opt in via config or `--deliver` so local runs never surprise-send |
 | Phase 7 handoff | Ops checklist + failure modes + `python -m src deliver` | Retry Docs/Gmail without re-ingest; monthly GHA schedule |
 | Scheduler cadence | **Monthly** (`0 3 1 * *`) | GitHub Actions free tier; lookback still `window_weeks` |
+| Frontend host | **Vercel** (`frontend/` Vite SPA) | Root Directory `frontend` or root `vercel.json`; not a Python Vercel app |
+| Pipeline host | **GitHub Actions** (+ optional Railway Docker worker) | MCP remains on Railway `gmail-docs-mcp-server` |
+| Dashboard data | Sync via `scripts/sync_frontend_data.py` | GHA commits `frontend/public/data/*` to trigger Vercel |
 
 ## Deferred (not v1)
 

@@ -1,6 +1,6 @@
 # Operator checklist — Groww pulse
 
-Aligned with [`architecture.md`](./architecture.md) §13. Delivery uses MCP **append + send** (not Doc create / Gmail draft).
+Aligned with [`architecture.md`](./architecture.md) §13. Delivery uses MCP **append + send** (not Doc create / Gmail draft). Deploy topology: [`deployment-plan.md`](./deployment-plan.md).
 
 ## Monthly ritual (or ad-hoc)
 
@@ -35,6 +35,17 @@ If `pulse.md` / `pulse.json` already exist and you only want Docs + email:
 ```bash
 python -m src deliver
 ```
+
+## Sync dashboard for Vercel
+
+After any successful pulse run:
+
+```bash
+python scripts/sync_frontend_data.py
+# commit + push frontend/public/data/ to redeploy the UI
+```
+
+Monthly GitHub Actions does this automatically when `sync_frontend` is enabled.
 
 ## GitHub Actions (monthly)
 

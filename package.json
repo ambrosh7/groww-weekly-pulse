@@ -1,0 +1,14 @@
+{
+  "name": "groww-weekly-pulse",
+  "private": true,
+  "description": "Monorepo root — Vercel builds the Vite dashboard in frontend/",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "preview": "npm run preview --prefix frontend",
+    "sync:frontend-data": "python scripts/sync_frontend_data.py"
+  }
+}

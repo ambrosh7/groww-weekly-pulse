@@ -20,17 +20,15 @@ Open http://localhost:5173
 
 ## Refresh data from the pipeline
 
-After `python -m src run --local-only` (or `--deliver`):
+From repo root after `python -m src run --local-only` (or `--deliver`):
 
 ```bash
-cp ../data/output/pulse.json public/data/pulse.json
+python scripts/sync_frontend_data.py
 ```
 
-Rebuild the reviews fixture if the sample CSV changed (from repo root):
+This updates `public/data/pulse.json` and `public/data/reviews.json` (theme labels from `themes.json`). Monthly GitHub Actions commits the same files so Vercel redeploys automatically.
 
-```bash
-# optional: regenerate reviews.json from the sample CSV using the same helper used at scaffold time
-```
+Optional build-time env: `VITE_DATA_BASE` — absolute origin prefix for `/data/*.json`.
 
 ## Build
 

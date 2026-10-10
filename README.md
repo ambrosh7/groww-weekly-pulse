@@ -54,14 +54,23 @@ npm run dev   # http://localhost:5173
 
 Views: Overview · Themes · Quotes · Actions · Reviews · Delivery. Theme toggle is in the top bar.
 
-### Deploy on Vercel
+### Deploy (Vercel + Railway)
 
-This repo’s **Python pipeline is a CLI**, not a Vercel Python app. Deploy the Vite frontend:
+Full plan: [`docs/deployment-plan.md`](docs/deployment-plan.md).
 
-1. Import `ambrosh7/groww-weekly-pulse` on Vercel.
-2. Prefer **Root Directory = `frontend`** (Project → Settings → General), *or* use the root [`vercel.json`](vercel.json) which builds `frontend/`.
-3. Framework: Vite · Build: `npm run build` · Output: `dist`.
-4. Redeploy. Do **not** set a Python entrypoint / `tool.vercel.entrypoint`.
+| Layer | Host | In-repo assets |
+| --- | --- | --- |
+| Dashboard | **Vercel** | `frontend/`, [`vercel.json`](vercel.json), [Frontend CI](.github/workflows/frontend-ci.yml) |
+| Docs/Gmail MCP | **Railway** | Separate [`gmail-docs-mcp-server`](https://github.com/ambrosh7/gmail-docs-mcp-server) |
+| Pulse pipeline | **GitHub Actions** (default) | [monthly-pulse.yml](.github/workflows/monthly-pulse.yml) + data sync commit |
+| Pulse pipeline (alt) | **Railway worker** | [`Dockerfile`](Dockerfile), [`railway.toml`](railway.toml), `scripts/railway_run.sh` |
+
+```bash
+# After a local pulse run, refresh the dashboard fixtures:
+python scripts/sync_frontend_data.py
+```
+
+Quick Vercel notes: set **Root Directory = `frontend`**, or use root `vercel.json`. Do **not** set `tool.vercel.entrypoint`.
 
 ## Quick start
 

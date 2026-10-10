@@ -1,11 +1,16 @@
 let cache = null;
 
+function dataUrl(path) {
+  const base = (import.meta.env.VITE_DATA_BASE || "").replace(/\/$/, "");
+  return `${base}${path}`;
+}
+
 export async function loadDashboardData() {
   if (cache) return cache;
 
   const [pulseRes, reviewsRes] = await Promise.all([
-    fetch("/data/pulse.json"),
-    fetch("/data/reviews.json"),
+    fetch(dataUrl("/data/pulse.json")),
+    fetch(dataUrl("/data/reviews.json")),
   ]);
 
   if (!pulseRes.ok) throw new Error("Failed to load pulse.json");
@@ -40,4 +45,9 @@ export async function loadDashboardData() {
     quotes: pulse.quotes || [],
   };
   return cache;
+}
+
+/** Test helper / HMR-friendly reset */
+export function clearDashboardCache() {
+  cache = null;
 }

@@ -6,7 +6,7 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {
-      "source": "/((?!assets/).*)",
+      "source": "/((?!assets/|data/).*)",
       "destination": "/index.html"
     }
   ]

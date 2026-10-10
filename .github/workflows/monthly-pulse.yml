@@ -1,7 +1,7 @@
 # Monthly Groww pulse scheduler (GitHub Actions — free tier friendly).
 #
 # Runs the same CLI as local: fetch Play reviews → ingest → theme → pulse
-# → optional Docs append + Gmail send via MCP.
+# → optional Docs append + Gmail send via MCP → sync dashboard JSON for Vercel.
 #
 # Setup (repo → Settings → Secrets and variables → Actions):
 #   Secrets:
@@ -12,6 +12,7 @@
 #     GOOGLE_DOC_URL         — full docs.google.com URL (alternative to ID)
 #     MCP_BASE_URL           — default Railway prod URL
 #     WINDOW_WEEKS           — 8–12 (default 10)
+#     SYNC_FRONTEND          — "true"/"false" (default true): commit pulse data for Vercel
 #
 # Free-tier notes:
 #   - Public repos: Actions minutes are free/unlimited for standard runners
@@ -20,8 +21,6 @@
 #   - Cron can delay under load; use "Run workflow" for an immediate test
 #
 # Cadence (UTC): 1st of each month at 03:00 → ~08:30 IST
-#   Monthly: 0 3 1 * *
-#   Weekly Mon (not used): 0 3 * * 1
 
 name: Monthly Groww Pulse
 
@@ -47,23 +46,29 @@ on:
         description: "Max Play reviews to fetch"
         type: string
         default: "5000"
+      sync_frontend:
+        description: "Commit synced pulse JSON into frontend/public/data (triggers Vercel)"
+        type: boolean
+        default: true
 
 concurrency:
   group: groww-monthly-pulse
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   pulse:
-    name: Fetch → pulse → deliver
+    name: Fetch → pulse → deliver → sync UI
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -82,11 +87,13 @@ jobs:
             echo "fetch=true" >> "$GITHUB_OUTPUT"
             echo "sample=false" >> "$GITHUB_OUTPUT"
             echo "max_reviews=5000" >> "$GITHUB_OUTPUT"
+            echo "sync_frontend=true" >> "$GITHUB_OUTPUT"
           else
             echo "deliver=${{ inputs.deliver }}" >> "$GITHUB_OUTPUT"
             echo "fetch=${{ inputs.fetch_reviews }}" >> "$GITHUB_OUTPUT"
             echo "sample=${{ inputs.use_sample }}" >> "$GITHUB_OUTPUT"
             echo "max_reviews=${{ inputs.max_reviews }}" >> "$GITHUB_OUTPUT"
+            echo "sync_frontend=${{ inputs.sync_frontend }}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Write CI settings.yaml
@@ -126,6 +133,25 @@ jobs:
           fi
           python -m src run --deliver
 
+      - name: Sync frontend dashboard data
+        id: sync
+        run: |
+          python scripts/sync_frontend_data.py
+          if git diff --quiet -- frontend/public/data/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit dashboard data for Vercel
+        if: ${{ steps.mode.outputs.sync_frontend == 'true' && steps.sync.outputs.changed == 'true' && github.ref == 'refs/heads/main' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/public/data/pulse.json frontend/public/data/reviews.json
+          git commit -m "Refresh dashboard pulse data from monthly pipeline"
+          git push
+
       - name: Upload pulse artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -134,5 +160,7 @@ jobs:
           path: |
             data/output/pulse.md
             data/output/pulse.json
+            frontend/public/data/pulse.json
+            frontend/public/data/reviews.json
           if-no-files-found: warn
           retention-days: 90

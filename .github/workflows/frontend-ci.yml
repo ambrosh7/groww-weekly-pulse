@@ -1,0 +1,54 @@
+# Build the Vite dashboard on every PR / push that touches frontend or Vercel config.
+name: Frontend CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - "vercel.json"
+      - "package.json"
+      - ".github/workflows/frontend-ci.yml"
+  pull_request:
+    paths:
+      - "frontend/**"
+      - "vercel.json"
+      - "package.json"
+      - ".github/workflows/frontend-ci.yml"
+
+concurrency:
+  group: frontend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Vite build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify data fixtures
+        run: |
+          test -f public/data/pulse.json
+          test -f public/data/reviews.json
+          node -e "JSON.parse(require('fs').readFileSync('public/data/pulse.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('public/data/reviews.json','utf8'))"
