@@ -42,6 +42,27 @@ cp config/settings.example.yaml config/settings.yaml
 python -m src validate-config
 ```
 
+## Dashboard UI
+
+Stitch-based light/dark console lives in [`frontend/`](frontend/) (design source: [`stitch_groww_weekly_review_pulse/`](stitch_groww_weekly_review_pulse/)).
+
+```bash
+cd frontend
+npm install
+npm run dev   # http://localhost:5173
+```
+
+Views: Overview · Themes · Quotes · Actions · Reviews · Delivery. Theme toggle is in the top bar.
+
+### Deploy on Vercel
+
+This repo’s **Python pipeline is a CLI**, not a Vercel Python app. Deploy the Vite frontend:
+
+1. Import `ambrosh7/groww-weekly-pulse` on Vercel.
+2. Prefer **Root Directory = `frontend`** (Project → Settings → General), *or* use the root [`vercel.json`](vercel.json) which builds `frontend/`.
+3. Framework: Vite · Build: `npm run build` · Output: `dist`.
+4. Redeploy. Do **not** set a Python entrypoint / `tool.vercel.entrypoint`.
+
 ## Quick start
 
 ```bash
@@ -109,6 +130,8 @@ config/           # settings.example.yaml · settings.yaml (local, gitignored)
 data/raw/         # Play exports + sample CSV
 data/processed/   # reviews.json, themes.json
 data/output/      # pulse.md, pulse.json
+frontend/         # Stitch-based dashboard (Vite)
+stitch_groww_weekly_review_pulse/  # Stitch export (DESIGN.md + code.html)
 src/              # ingest → theme → pulse → mcp → orchestrator → deliver
 .github/workflows # monthly-pulse.yml
 docs/             # problem, architecture, plan, ops, failures, eval

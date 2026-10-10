@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}:root{--bg:#0b1326;--surface:#131b2e;--surface-elevated:#171f32;--text:#dae2fc;--muted:#bacac1;--border:#3c4a43;--accent:#44edb7;--danger:#ffb4ab;--warning:#ffc98a;--success:#44edb7;}html:not(.dark){--bg:#f8fafc;--surface:#ffffff;--surface-elevated:#f1f5f9;--text:#0b1326;--muted:#64748b;--border:#e2e8f0;--accent:#00d09c;--danger:#ef4444;--warning:#f59e0b;--success:#05a47b;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed":"#2a1700","primary":"#44edb7","tertiary-container":"#fda417","secondary-fixed":"#7cf9ca","secondary-fixed-dim":"#5ddcaf","secondary":"#5ddcaf","error-container":"#93000a","on-secondary-fixed-variant":"#00513b","surface-container-low":"#131b2e","on-error":"#690005","on-background":"#dae2fc","on-error-container":"#ffdad6","error":"#ffb4ab","on-tertiary":"#472a00","inverse-surface":"#dae2fc","primary-container":"#00d09c","secondary-container":"#05a47b","surface-container":"#171f32","on-tertiary-fixed-variant":"#653e00","on-secondary-fixed":"#002116","on-surface-variant":"#bacac1","surface-container-lowest":"#060e20","on-surface":"#dae2fc","on-secondary":"#003828","surface-tint":"#2fe0aa","inverse-on-surface":"#283044","primary-fixed-dim":"#2fe0aa","surface":"#0b1326","surface-container-highest":"#2d3449","on-primary-container":"#00533c","on-tertiary-container":"#673f00","on-primary-fixed":"#002116","on-primary-fixed-variant":"#00513b","surface-dim":"#0b1326","on-secondary-container":"#003122","outline":"#85948c","surface-variant":"#2d3449","tertiary-fixed":"#ffddb8","tertiary-fixed-dim":"#ffb95f","background":"#0b1326","surface-container-high":"#222a3d","on-primary":"#003828","inverse-primary":"#006c4f","outline-variant":"#3c4a43","primary-fixed":"#59fdc5","tertiary":"#ffc98a","surface-bright":"#31394d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","margin":"2rem","margin-mobile":"1rem","space-xl":"2rem","space-lg":"1.5rem","gutter":"1.25rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter-mobile":"0.75rem"},"fontFamily":{"headline-md":["Outfit"],"headline-lg":["Outfit"],"display-lg":["Outfit"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"code-tabular":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Outfit"],"metric-kpi":["Outfit"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"code-tabular":["13px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"metric-kpi":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"500"}]}}}};</script><script>function toggleAppTheme(){const doc=document.documentElement;const isDark=doc.classList.contains('dark');if(isDark){doc.classList.remove('dark');localStorage.setItem('groww_theme','light');}else{doc.classList.add('dark');localStorage.setItem('groww_theme','dark');}}(()=>{const saved=localStorage.getItem('groww_theme');if(saved==='light'){document.documentElement.classList.remove('dark');}else{document.documentElement.classList.add('dark');}})();</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="p-space-lg flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Groww Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WBe5sMOhGWhgJPDbQ9EdS2g2c9uRjaSSfWrBjzKUYPe2abu79MdEBpNqSbnOybYEcZsG1B_A9dmSvV5mXjvwg1QlB8qkeXcmnVyaef6bHsmh6yXDya0QS_SepcjEoIRVCtLx-jBgtRWXdcPdMDMrYJl0rfrLEIJOQFUYQkG_0Of4IUl8aKJNnn2pPZt8DH1-g4J1BmJiGXPbqs0mC4lDoXQFvBHwnzqVP7vtQMhqmAXUFBHo2pDg8yFmE"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Groww</span></div><span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">Weekly Pulse</span></div><div class="mx-space-lg mb-space-md p-space-sm rounded-lg bg-surface-container flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">storefront</span><span>Google Play Store · Stocks &amp; MF</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="themes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-body-md text-body-md">Themes</span></div><span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm">3 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="quotes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">format_quote</span><span class="font-body-md text-body-md">Quotes</span></div><span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">30</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-headline-sm" data-path="actions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">check_circle</span><span class="font-body-md text-body-md">Actions</span></div><span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-tertiary font-label-sm text-label-sm">3 Pending</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reviews" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">filter_list</span><span class="font-body-md text-body-md">Reviews</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="delivery" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">cloud_done</span><span class="font-body-md text-body-md">Delivery</span></div><span class="px-space-sm py-0.5 rounded-full bg-primary/20 text-primary font-label-sm text-label-sm">Live</span></a></nav></div><div class="p-space-lg flex flex-col gap-space-md"><div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs"><div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Sync Window</span><span class="text-primary font-label-md text-label-md">Live Feed</span></div><p class="font-body-sm text-body-sm text-on-surface">Last 10 wks (30 reviews)</p></div><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="relative"><div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-on-surface">PC</div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary"></span></div><div class="flex flex-col"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Product Core Team</span><span class="font-label-sm text-label-sm text-on-surface-variant">Executive Reviewer</span></div></div><button class="p-1 text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><img alt="Groww Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WBe5sMOhGWhgJPDbQ9EdS2g2c9uRjaSSfWrBjzKUYPe2abu79MdEBpNqSbnOybYEcZsG1B_A9dmSvV5mXjvwg1QlB8qkeXcmnVyaef6bHsmh6yXDya0QS_SepcjEoIRVCtLx-jBgtRWXdcPdMDMrYJl0rfrLEIJOQFUYQkG_0Of4IUl8aKJNnn2pPZt8DH1-g4J1BmJiGXPbqs0mC4lDoXQFvBHwnzqVP7vtQMhqmAXUFBHo2pDg8yFmE"/><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="text-on-surface font-semibold">Groww Weekly Review Pulse</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-primary font-medium">Console</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="text-on-surface font-medium">Week ending: Oct 10, 2026</span><span class="text-on-surface-variant font-label-sm text-label-sm">(Aug 03 – Oct 10, 2026)</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div><button class="p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Refresh sync" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span></button><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">file_download</span><span>Export Report</span></button><button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="toggleAppTheme()" title="Toggle Light/Dark Theme" type="button"><span class="material-symbols-outlined text-[18px] text-tertiary">light_mode</span><span class="text-on-surface-variant">/</span><span class="material-symbols-outlined text-[18px] text-primary">dark_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-space-xl py-space-xl"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Operational Banner & Control Deck -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-xl">
+<div class="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-primary/10 via-secondary-container/5 to-transparent blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary font-semibold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            Weekly Cycle Synthesis
+          </span>
+<span class="text-on-surface-variant">·</span>
+<span class="text-on-surface-variant font-code-tabular text-code-tabular">Week Ending Oct 10, 2026</span>
+<span class="text-on-surface-variant">·</span>
+<span class="text-secondary font-medium">30 Store Verbatims Evaluated</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
+          Prioritized Action Matrix
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          3 high-leverage product initiatives synthesized from 30 Play Store reviews across 3 key friction themes. Focused on mitigating revenue drag and order execution latency.
+        </p>
+</div>
+<!-- Quick Export & Primary Actions -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="group flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">share</span>
+<span>Share Summary</span>
+</button>
+<button class="group flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">sync_alt</span>
+<span>Export to Jira / Linear</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:brightness-110 transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>+ Propose New Action</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Pipeline Summary Stats Bar -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Stat 1: Total Initiatives -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Total Pipeline</span>
+<span class="p-1.5 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-sm">
+<span class="font-metric-kpi text-metric-kpi text-on-surface">3</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Active Matrix Tasks</span>
+</div>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+        Target resolution window: Sprint 41
+      </p>
+<div class="mt-space-md w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden flex">
+<div class="bg-primary h-full w-1/3" title="1 Done"></div>
+<div class="bg-tertiary-container h-full w-1/3" title="1 In Review"></div>
+<div class="bg-secondary h-full w-1/3" title="1 Suggested"></div>
+</div>
+</div>
+<!-- Stat 2: Velocity & Status Breakdown -->
+<div class="rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Status Breakdown</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant">3 Stages</span>
+</div>
+<div class="mt-space-sm grid grid-cols-3 gap-space-xs pt-1">
+<div class="flex flex-col p-2 rounded-lg bg-surface-container">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">New</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Suggested</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">P0</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-tertiary mt-1">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">In Review</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Prod</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-primary mt-1">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Shipped</span>
+</div>
+</div>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+        Cycle closure index: <span class="text-on-surface font-semibold">33.3% complete</span>
+</p>
+</div>
+<!-- Stat 3: Primary Focus Vector -->
+<div class="rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Dominant Vector</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/30 text-error font-label-sm text-label-sm font-semibold">Critical</span>
+</div>
+<div class="mt-space-sm flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">Reliability &amp; Orders</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          46.7% of total churn signal concentrated in peak morning GTT order drop-offs.
+        </span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Friction Index: High</span>
+<span class="text-error font-semibold">2.1 / 5.0 Sentiment</span>
+</div>
+</div>
+<!-- Stat 4: Estimated Impact Potential -->
+<div class="rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Rating Trajectory</span>
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-metric-kpi text-metric-kpi text-primary">+0.30★</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Play Store Delta</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Target recovery by Nov 2026 if P0 &amp; P1 mitigation sprints deploy on schedule.
+      </p>
+<div class="mt-space-md flex items-center gap-space-xs font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Validated against 30 week verbatims</span>
+</div>
+</div>
+</div>
+<!-- Interactive Prioritized Action Cards Deck -->
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface">Execution Plan</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">3 Initiatives Ranked by Severity</span>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span>Sort:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-semibold" type="button">Urgency (P0 → P2)</button>
+</div>
+</div>
+<!-- CARD 1: P0 IMMEDIATE -->
+<article class="group relative overflow-hidden rounded-xl bg-surface-container-low transition-all duration-300 hover:shadow-xl hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-error via-tertiary-container to-error"></div>
+<div class="p-space-lg flex flex-col gap-space-md pl-space-xl">
+<!-- Card Header Badges & Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Priority Badge -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container/40 text-error font-headline-sm text-[13px] font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[15px]">crisis_alert</span>
+              P0 · Immediate
+            </span>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-md text-label-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+              In Review
+            </span>
+<!-- Theme Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">candlestick_chart</span>
+              Theme: Trading / Orders / Quotes
+            </span>
+</div>
+<!-- Direct Actions / Modal Toggle Button -->
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md transition-colors" onclick="toggleEvidenceModal('modal-p0')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>View 14 Evidence Quotes</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Action options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Title -->
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors">
+            Fix GTT order error handling &amp; add client-side retry banner
+          </h2>
+<div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">rate_review</span>
+<strong class="text-on-surface font-semibold">14 reviews affected</strong>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">star</span>
+<span>Sub-segment score: <strong class="text-error font-semibold">2.1★</strong></span>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>ETA: Next Hotfix (v14.8.4)</span>
+</span>
+</div>
+</div>
+<!-- Problem / Solution Bento Split -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Problem Box -->
+<div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-error font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">error_outline</span>
+<span>Observed Friction Statement</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Generic "something went wrong" modal confuses users during morning market peak hours (9:15–9:45 AM) when trigger conditions fail or downstream broker gateway throttles, triggering panic cancel requests and Play Store 1-star reviews.
+            </p>
+</div>
+<!-- Solution Box -->
+<div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Engineered Resolution Spec</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Expose explicit microservice timeout code, provide a persistent 1-tap "Retry Order" floating banner with cached parameters, and notify via high-priority push when trigger is queued rather than failing silently.
+            </p>
+</div>
+</div>
+<!-- Impact, Assignees & Footer Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs border-t-0">
+<!-- Impact Metric Pill -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-high/60 max-w-xl">
+<span class="p-1 rounded bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Expected Sentiment Impact</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">
+                Addresses <span class="text-primary font-bold">46.7%</span> of negative Play Store sentiment; estimated <span class="text-primary font-bold">+0.30</span> rating recovery across active traders.
+              </span>
+</div>
+</div>
+<!-- Assignees and Pipeline Routing -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Owner:</span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<div class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary font-bold text-[10px] flex items-center justify-center">AV</div>
+<span>Aditi V. <span class="text-on-surface-variant font-normal">(Trading Core)</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lead Eng:</span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary font-bold text-[10px] flex items-center justify-center">RK</div>
+<span>Rohit K.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: P1 HIGH (ONBOARDING) -->
+<article class="group relative overflow-hidden rounded-xl bg-surface-container-low transition-all duration-300 hover:shadow-xl hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-secondary to-primary-container"></div>
+<div class="p-space-lg flex flex-col gap-space-md pl-space-xl">
+<!-- Card Header Badges & Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Priority Badge -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-headline-sm text-[13px] font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[15px]">flag</span>
+              P1 · High Priority
+            </span>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed-dim/20 text-secondary-fixed font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Suggested (New)
+            </span>
+<!-- Theme Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">person_add</span>
+              Theme: Onboarding / Signup
+            </span>
+</div>
+<!-- Direct Actions / Modal Toggle Button -->
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md transition-colors" onclick="toggleEvidenceModal('modal-p1')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>View 9 Evidence Quotes</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Action options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Title -->
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-secondary transition-colors">
+            Automate PAN fallback OCR verification pipeline &amp; add SLA countdown
+          </h2>
+<div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">rate_review</span>
+<strong class="text-on-surface font-semibold">9 reviews affected</strong>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">star</span>
+<span>Sub-segment score: <strong class="text-on-surface font-semibold">2.8★</strong></span>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+<span>Target: Sprint 42</span>
+</span>
+</div>
+</div>
+<!-- Problem / Solution Bento Split -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Problem Box -->
+<div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-tertiary font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>Observed Friction Statement</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Manual document queue backlog causes onboarding drop-off after PAN card photo upload exceeds 5 business days without real-time state feedback, inducing severe drop-off right before first deposit.
+            </p>
+</div>
+<!-- Solution Box -->
+<div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Engineered Resolution Spec</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Deploy secondary OCR fallback provider for blurry user uploads, introduce a user-facing dynamic SLA timer ("Verified in under 2 hrs"), and proactively push WhatsApp/SMS alerts immediately upon state approval.
+            </p>
+</div>
+</div>
+<!-- Impact & Assignees -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-high/60 max-w-xl">
+<span class="p-1 rounded bg-secondary/20 text-secondary">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Expected Conversion Impact</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">
+                Reduces onboarding support tickets by <span class="text-secondary font-bold">~35%</span>; improves new registered user activation conversion by <span class="text-secondary font-bold">+18%</span>.
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Owner:</span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-bold text-[10px] flex items-center justify-center">VS</div>
+<span>Vikram S. <span class="text-on-surface-variant font-normal">(Growth &amp; Onboarding)</span></span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: P1 DONE / SHIPPED -->
+<article class="group relative overflow-hidden rounded-xl bg-surface-container-low transition-all duration-300 hover:shadow-xl hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="p-space-lg flex flex-col gap-space-md pl-space-xl">
+<!-- Card Header Badges & Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Priority Badge -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-headline-sm text-[13px] font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+              P1 · High Priority
+            </span>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/20 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Done / Shipped
+            </span>
+<!-- Theme Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">badge</span>
+              Theme: KYC / Verification
+            </span>
+</div>
+<!-- Shipped Version Timestamp Badge -->
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-code-tabular text-code-tabular font-medium">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+<span>Shipped Oct 10, 2026 · v14.8.3</span>
+</span>
+</div>
+</div>
+<!-- Title -->
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Re-synchronize Android client auth tokens with Web KYC status DB
+          </h2>
+<div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">rate_review</span>
+<strong class="text-on-surface font-semibold">7 reviews resolved</strong>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">star</span>
+<span>Prior score: <strong class="text-on-surface font-semibold">3.1★</strong></span>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">published_with_changes</span>
+<span>Status: <strong class="text-primary font-medium">100% Rollout Live</strong></span>
+</span>
+</div>
+</div>
+<!-- Problem / Solution Bento Split -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Problem Box -->
+<div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Root Issue Resolved</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              User completes KYC on browser/desktop web, but mobile Android app session does not refresh permission scopes without manual forced logout/login, resulting in duplicate verification prompts.
+            </p>
+</div>
+<!-- Solution Box -->
+<div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>Shipped Engineering Fix</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Triggered automatic silent token refresh on app launch and WebSocket push when user account status transitions to <code class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-code-tabular text-[12px] font-semibold">KYC_VERIFIED</code> across all microservices.
+            </p>
+</div>
+</div>
+<!-- Impact & Assignees -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-high/60 max-w-xl">
+<span class="p-1 rounded bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Post-Ship Impact</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">
+                Eliminated cross-device verification confusion entirely; zero related support tickets logged in past 48 hours.
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mobile Lead:</span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary font-bold text-[10px] flex items-center justify-center">PM</div>
+<span>Priya M. <span class="text-on-surface-variant font-normal">(Mobile Platform Core)</span></span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Evidence Quotes Flyout / Modal (Card 1: 14 Reviews) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md hidden transition-opacity" id="modal-p0">
+<div class="relative w-full max-w-3xl max-h-[85vh] overflow-hidden rounded-xl bg-surface-container-low shadow-2xl flex flex-col m-space-md">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-sm text-label-sm font-bold uppercase">P0 Evidence</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">14 Cited User Verbatims</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Google Play Store · Theme: Trading / Orders / Quotes (Avg 2.1★)</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:text-on-surface" onclick="toggleEvidenceModal('modal-p0')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Verbatim Quotes Scrollable Body -->
+<div class="p-space-lg overflow-y-auto flex flex-col gap-space-md">
+<!-- Quote 1 -->
+<div class="relative p-space-md rounded-lg bg-surface-container pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error rounded-l"></div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-on-surface">Rahul M. · Play Store User</span>
+<span class="flex text-tertiary">★☆☆☆☆ (1★) · Oct 09, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+            "My GTT order got triggered at 9:20 AM but failed silently with 'Something went wrong'. By the time I noticed, the stock slipped 3%. If an order errors out, tell me WHY so I can re-enter immediately!"
+          </p>
+<div class="mt-2 flex items-center gap-space-sm font-code-tabular text-[11px] text-on-surface-variant">
+<span>Device: Pixel 8 Pro</span>
+<span>·</span>
+<span>App: v14.8.2</span>
+<span>·</span>
+<span class="text-error">Trigger Gateway Timeout</span>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="relative p-space-md rounded-lg bg-surface-container pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error rounded-l"></div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-on-surface">Karthik S. · F&amp;O Trader</span>
+<span class="flex text-tertiary">★☆☆☆☆ (1★) · Oct 07, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+            "Why is there no retry button on failed limit orders? You have to click back, open watchlist again, find the strike, and buy again. In fast markets, that 30-second delay is disastrous."
+          </p>
+<div class="mt-2 flex items-center gap-space-sm font-code-tabular text-[11px] text-on-surface-variant">
+<span>Device: Galaxy S24</span>
+<span>·</span>
+<span>App: v14.8.2</span>
+<span>·</span>
+<span class="text-error">Client State Reset Failure</span>
+</div>
+</div>
+<!-- Quote 3 -->
+<div class="relative p-space-md rounded-lg bg-surface-container pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-container rounded-l"></div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-on-surface">Ananya Sen · Swing Investor</span>
+<span class="flex text-tertiary">★★☆☆☆ (2★) · Oct 05, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+            "Notification for GTT execution reached 45 minutes after the actual trigger event. App showed order in pending state even when exchange rejected margin. Please improve status sync."
+          </p>
+<div class="mt-2 flex items-center gap-space-sm font-code-tabular text-[11px] text-on-surface-variant">
+<span>Device: OnePlus 12</span>
+<span>·</span>
+<span>App: v14.8.1</span>
+<span>·</span>
+<span class="text-tertiary">Push Queue Lag</span>
+</div>
+</div>
+<!-- Remaining reviews summary note -->
+<div class="p-space-sm rounded bg-surface-container-highest text-center font-label-sm text-label-sm text-on-surface-variant">
+          + 11 additional reviews matching pattern: "Timeout during 09:15-09:45 AM peak session with blank dialog"
+        </div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Source: Groww Review Analytics Pipeline v3.2</span>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold" onclick="toggleEvidenceModal('modal-p0')" type="button">
+          Dismiss Drawer
+        </button>
+</div>
+</div>
+</div>
+<!-- Evidence Quotes Flyout / Modal (Card 2: 9 Reviews) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md hidden transition-opacity" id="modal-p1">
+<div class="relative w-full max-w-3xl max-h-[85vh] overflow-hidden rounded-xl bg-surface-container-low shadow-2xl flex flex-col m-space-md">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-sm text-label-sm font-bold uppercase">P1 Evidence</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">9 Cited User Verbatims</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Google Play Store · Theme: Onboarding / Signup (Avg 2.8★)</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:text-on-surface" onclick="toggleEvidenceModal('modal-p1')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Verbatim Quotes Scrollable Body -->
+<div class="p-space-lg overflow-y-auto flex flex-col gap-space-md">
+<!-- Quote 1 -->
+<div class="relative p-space-md rounded-lg bg-surface-container pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-l"></div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-on-surface">Deepak Verma · New Investor</span>
+<span class="flex text-tertiary">★☆☆☆☆ (1★) · Oct 08, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+            "Uploaded PAN photo 6 days ago. Still stuck on 'Verification Under Process'. No estimate, no support chat response. Ready to switch to Zerodha if not approved today."
+          </p>
+<div class="mt-2 flex items-center gap-space-sm font-code-tabular text-[11px] text-on-surface-variant">
+<span>Device: Vivo V29</span>
+<span>·</span>
+<span>App: v14.8.2</span>
+<span>·</span>
+<span class="text-tertiary">Manual Queue Overrun</span>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="relative p-space-md rounded-lg bg-surface-container pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-l"></div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-on-surface">Simran K. · Student</span>
+<span class="flex text-tertiary">★★☆☆☆ (2★) · Oct 04, 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+            "Camera took a blurry photo of my PAN and submitted automatically without letting me retake it. Now it says manual review will take 48 hours. Put an SLA timer on the screen please."
+          </p>
+<div class="mt-2 flex items-center gap-space-sm font-code-tabular text-[11px] text-on-surface-variant">
+<span>Device: Redmi Note 13</span>
+<span>·</span>
+<span>App: v14.8.0</span>
+<span>·</span>
+<span class="text-secondary">OCR Glare Fallback</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-highest text-center font-label-sm text-label-sm text-on-surface-variant">
+          + 7 additional reviews requesting transparent turnaround times during onboarding document capture.
+        </div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Synthesized for Growth Squad Sprint 42</span>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold" onclick="toggleEvidenceModal('modal-p1')" type="button">
+          Dismiss Drawer
+        </button>
+</div>
+</div>
+</div>
+<!-- Executive Sign-off & Audit Trail Block -->
+<footer class="rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Executive Sign-Off &amp; Approvals</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Weekly Pulse governance compliance record for Product Review Council</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-code-tabular text-code-tabular text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Audit Timestamp: Oct 10, 2026 · 17:45 IST</span>
+</div>
+</div>
+<!-- 3 Signatory Columns -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<!-- Product Lead -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-headline-sm flex items-center justify-center font-bold">
+            SK
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Sameer K.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Head of Product Core</span>
+<span class="font-code-tabular text-[11px] text-primary font-medium mt-0.5">Signed · Approved</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+</div>
+<!-- Eng Director -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary/20 text-secondary font-headline-sm flex items-center justify-center font-bold">
+            RN
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Ramesh N.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">VP Engineering (Trading)</span>
+<span class="font-code-tabular text-[11px] text-primary font-medium mt-0.5">Signed · Sizing Confirmed</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+</div>
+<!-- Support Lead -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 text-tertiary font-headline-sm flex items-center justify-center font-bold">
+            TM
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Tanvi M.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Head of Customer Delight</span>
+<span class="font-code-tabular text-[11px] text-primary font-medium mt-0.5">Signed · SLA Aligned</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  function toggleEvidenceModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    if (modal.classList.contains('hidden')) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    } else {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Close modals when clicking backdrop
+  window.addEventListener('click', function(e) {
+    const m0 = document.getElementById('modal-p0');
+    const m1 = document.getElementById('modal-p1');
+    if (e.target === m0) toggleEvidenceModal('modal-p0');
+    if (e.target === m1) toggleEvidenceModal('modal-p1');
+  });
+</script></main></div></body></html>

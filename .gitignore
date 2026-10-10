@@ -38,6 +38,10 @@ data/processed/*
 data/output/*
 !data/output/.gitkeep
 
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
 # OS / IDE
 .DS_Store
 .idea/

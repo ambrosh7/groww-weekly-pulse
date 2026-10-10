@@ -1,0 +1,81 @@
+{
+  "week_ending": "2026-10-10",
+  "window_weeks": 10,
+  "window_start": "2026-08-01",
+  "window_end": "2026-10-10",
+  "review_count": 30,
+  "min_review_words": 8,
+  "drop_emoji_reviews": true,
+  "require_english": true,
+  "product_name": "Groww",
+  "themes": [
+    {
+      "theme_id": "trading",
+      "label": "Trading / orders / quotes",
+      "count": 11,
+      "avg_rating": 3.273,
+      "rank_score": 0.8424,
+      "insight": "Dominant pain: Unable to place GTT order it keeps saying something went wrong."
+    },
+    {
+      "theme_id": "onboarding",
+      "label": "Onboarding / signup",
+      "count": 6,
+      "avg_rating": 2.0,
+      "rank_score": 0.6828,
+      "insight": "Dominant pain: Account opening stuck after PAN upload for almost a week. Low-star share is elevated."
+    },
+    {
+      "theme_id": "kyc",
+      "label": "KYC / verification",
+      "count": 5,
+      "avg_rating": 1.6,
+      "rank_score": 0.6638,
+      "insight": "Dominant pain: KYC shows verified on web but mobile still blocks trading. Low-star share is elevated."
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Unable to place GTT order it keeps saying something went wrong.",
+      "theme_id": "trading",
+      "theme_label": "Trading / orders / quotes",
+      "rating": 1,
+      "review_id": "c7943925dcac4180"
+    },
+    {
+      "text": "Account opening stuck after PAN upload for almost a week.",
+      "theme_id": "onboarding",
+      "theme_label": "Onboarding / signup",
+      "rating": 1,
+      "review_id": "38475cd3559908db"
+    },
+    {
+      "text": "KYC shows verified on web but mobile still blocks trading.",
+      "theme_id": "kyc",
+      "theme_label": "KYC / verification",
+      "rating": 1,
+      "review_id": "13f3ffff59cb1d13"
+    }
+  ],
+  "actions": [
+    {
+      "text": "Explain order cancel/pending outcomes in-app and harden chart / F&O stability during market hours",
+      "theme_id": "trading",
+      "theme_label": "Trading / orders / quotes"
+    },
+    {
+      "text": "Stop duplicate document asks during signup and fix OTP delivery / resend so account opening is not blocked",
+      "theme_id": "onboarding",
+      "theme_label": "Onboarding / signup"
+    },
+    {
+      "text": "Improve selfie / eSign / DigiLocker failure recovery and keep KYC status parity between web and mobile",
+      "theme_id": "kyc",
+      "theme_label": "KYC / verification"
+    }
+  ],
+  "word_count": 228,
+  "doc_url": null,
+  "source_fixture": "groww_play_reviews_sample.csv",
+  "soft_fail_note": null
+}
