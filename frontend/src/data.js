@@ -9,8 +9,8 @@ export async function loadDashboardData() {
   if (cache) return cache;
 
   const [pulseRes, reviewsRes] = await Promise.all([
-    fetch(dataUrl("/data/pulse.json")),
-    fetch(dataUrl("/data/reviews.json")),
+    fetch(dataUrl("/data/pulse.json"), { cache: "no-store" }),
+    fetch(dataUrl("/data/reviews.json"), { cache: "no-store" }),
   ]);
 
   if (!pulseRes.ok) throw new Error("Failed to load pulse.json");
