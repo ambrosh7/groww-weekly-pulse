@@ -75,7 +75,16 @@
     }
   ],
   "word_count": 228,
-  "doc_url": null,
+  "doc_url": "https://docs.google.com/document/d/1JxgmNDrO7eiOxxAEGGuJG8VjLnuFTEJxrcm6xNa5NfE/edit",
   "source_fixture": "groww_play_reviews_sample.csv",
-  "soft_fail_note": null
+  "soft_fail_note": null,
+  "document_id": "1JxgmNDrO7eiOxxAEGGuJG8VjLnuFTEJxrcm6xNa5NfE",
+  "docs_request_id": "groww-pulse-docs-2026-10-10",
+  "email": {
+    "status": "sent",
+    "recipient": "ambroshvaz15@gmail.com",
+    "request_id": "groww-pulse-mail-2026-10-10",
+    "message_id": "1a12469493b623dc",
+    "thread_id": "1a12469493b623dc"
+  }
 }
