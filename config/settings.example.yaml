@@ -1,0 +1,57 @@
+# Copy to config/settings.yaml and adjust.
+# Secrets for Google Docs/Gmail stay in the MCP server environment — not here.
+
+product_name: Groww
+play_package_id: com.nextbillion.groww
+
+# Review lookback in weeks (must be between 8 and 12 inclusive)
+window_weeks: 10
+
+# Keep only reviews with more than this many words (word_count > min_review_words)
+min_review_words: 8
+
+# Phase 2 corpus quality
+drop_emoji_reviews: true   # drop emoji-only / emoji-dominated reviews
+require_english: true      # drop non-English (Indic scripts, langdetect != en)
+
+# Theming
+max_themes: 5
+quotes_per_theme: 3
+theme_hints:
+  - Onboarding / signup
+  - KYC / verification
+  - Payments / UPI / deposits
+  - Trading / orders / quotes
+  - Withdrawals / settlements / statements
+
+# Weekly pulse shape
+pulse_top_themes: 3
+quote_count: 3
+action_count: 3
+max_pulse_words: 250
+
+# Delivery (Phases 5–6) — Google OAuth stays on the MCP server, not here.
+# Bearer token: set env MCP_HTTP_BEARER_TOKEN (never commit it).
+email_recipient: you@example.com
+doc_title_template: "Groww Weekly Pulse — {week_ending}"
+
+mcp_base_url: https://gmail-docs-mcp-server-production.up.railway.app
+# Create one Google Doc once; append each week (MCP cannot create Docs).
+google_doc_id: ""          # or set google_doc_url below
+google_doc_url: ""         # https://docs.google.com/document/d/<ID>/edit
+publish_to_docs: false     # true or pass --publish-docs / --deliver
+send_email: false          # true or pass --send-email / --deliver (real send!)
+include_full_pulse_in_email: true
+
+# Paths (relative to repo root)
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  output_dir: data/output
+  default_raw_file: data/raw/groww_play_reviews.csv
+
+# Soft-fail when corpus is too thin for a perfect 3/3/3 (see docs/edge-case.md)
+allow_soft_fail: false
+
+# Phase 2: keyword_seed (deterministic v1). LLM labeling can replace later.
+clustering_approach: keyword_seed

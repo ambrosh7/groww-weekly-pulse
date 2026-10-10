@@ -1,0 +1,138 @@
+# Monthly Groww pulse scheduler (GitHub Actions — free tier friendly).
+#
+# Runs the same CLI as local: fetch Play reviews → ingest → theme → pulse
+# → optional Docs append + Gmail send via MCP.
+#
+# Setup (repo → Settings → Secrets and variables → Actions):
+#   Secrets:
+#     MCP_HTTP_BEARER_TOKEN  — Railway MCP bearer token
+#     EMAIL_RECIPIENT        — where to send the pulse
+#     GOOGLE_DOC_ID          — existing Doc id (or set GOOGLE_DOC_URL instead)
+#   Optional secrets/vars:
+#     GOOGLE_DOC_URL         — full docs.google.com URL (alternative to ID)
+#     MCP_BASE_URL           — default Railway prod URL
+#     WINDOW_WEEKS           — 8–12 (default 10)
+#
+# Free-tier notes:
+#   - Public repos: Actions minutes are free/unlimited for standard runners
+#   - Private repos: 2,000 minutes/month on GitHub Free
+#   - Scheduled workflows only run on the default branch
+#   - Cron can delay under load; use "Run workflow" for an immediate test
+#
+# Cadence (UTC): 1st of each month at 03:00 → ~08:30 IST
+#   Monthly: 0 3 1 * *
+#   Weekly Mon (not used): 0 3 * * 1
+
+name: Monthly Groww Pulse
+
+on:
+  schedule:
+    # 1st of every month at 03:00 UTC (~08:30 IST)
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+    inputs:
+      deliver:
+        description: "Append Google Doc + send Gmail via MCP"
+        type: boolean
+        default: true
+      fetch_reviews:
+        description: "Fetch fresh Play reviews before the pulse"
+        type: boolean
+        default: true
+      use_sample:
+        description: "Dry-run on committed sample CSV (skips fetch; local-only)"
+        type: boolean
+        default: false
+      max_reviews:
+        description: "Max Play reviews to fetch"
+        type: string
+        default: "5000"
+
+concurrency:
+  group: groww-monthly-pulse
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  pulse:
+    name: Fetch → pulse → deliver
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Resolve run mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "deliver=true" >> "$GITHUB_OUTPUT"
+            echo "fetch=true" >> "$GITHUB_OUTPUT"
+            echo "sample=false" >> "$GITHUB_OUTPUT"
+            echo "max_reviews=5000" >> "$GITHUB_OUTPUT"
+          else
+            echo "deliver=${{ inputs.deliver }}" >> "$GITHUB_OUTPUT"
+            echo "fetch=${{ inputs.fetch_reviews }}" >> "$GITHUB_OUTPUT"
+            echo "sample=${{ inputs.use_sample }}" >> "$GITHUB_OUTPUT"
+            echo "max_reviews=${{ inputs.max_reviews }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write CI settings.yaml
+        env:
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+          GOOGLE_DOC_ID: ${{ secrets.GOOGLE_DOC_ID }}
+          GOOGLE_DOC_URL: ${{ secrets.GOOGLE_DOC_URL }}
+          MCP_BASE_URL: ${{ vars.MCP_BASE_URL }}
+          WINDOW_WEEKS: ${{ vars.WINDOW_WEEKS }}
+          DELIVER: ${{ steps.mode.outputs.deliver }}
+        run: python scripts/write_ci_settings.py
+
+      - name: Fetch Play reviews
+        if: ${{ steps.mode.outputs.sample != 'true' && steps.mode.outputs.fetch == 'true' }}
+        run: |
+          python -m src fetch-reviews \
+            --lang en \
+            --country in \
+            --max-reviews "${{ steps.mode.outputs.max_reviews }}"
+
+      - name: Run sample pulse (local-only dry-run)
+        if: ${{ steps.mode.outputs.sample == 'true' }}
+        run: python -m src run -i data/raw/groww_play_reviews_sample.csv --local-only
+
+      - name: Run pulse (local-only, no MCP)
+        if: ${{ steps.mode.outputs.sample != 'true' && steps.mode.outputs.deliver != 'true' }}
+        run: python -m src run --local-only
+
+      - name: Run pulse + MCP deliver
+        if: ${{ steps.mode.outputs.sample != 'true' && steps.mode.outputs.deliver == 'true' }}
+        env:
+          MCP_HTTP_BEARER_TOKEN: ${{ secrets.MCP_HTTP_BEARER_TOKEN }}
+        run: |
+          if [ -z "$MCP_HTTP_BEARER_TOKEN" ]; then
+            echo "MCP_HTTP_BEARER_TOKEN secret is required for delivery" >&2
+            exit 1
+          fi
+          python -m src run --deliver
+
+      - name: Upload pulse artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: groww-monthly-pulse-${{ github.run_id }}
+          path: |
+            data/output/pulse.md
+            data/output/pulse.json
+          if-no-files-found: warn
+          retention-days: 90

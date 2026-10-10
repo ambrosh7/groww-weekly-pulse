@@ -1,0 +1,41 @@
+review_id,package_name,store,rating,title,text,date,locale
+gp-001,com.nextbillion.groww,play,2,,KYC keeps failing at the selfie step and support just asks to try again tomorrow.,2026-10-08,en_IN
+gp-002,com.nextbillion.groww,play,1,,Withdrawal to bank took more than three days with no clear status in the app.,2026-10-07,en_IN
+gp-003,com.nextbillion.groww,play,5,,Buying mutual funds is simple and the UI is clean for beginners.,2026-10-06,en_IN
+gp-004,com.nextbillion.groww,play,2,,UPI mandate for SIP failed twice even though my bank app showed success.,2026-10-05,en_IN
+gp-005,com.nextbillion.groww,play,3,,Charts freeze when I switch between stocks quickly during market hours.,2026-10-03,en_IN
+gp-006,com.nextbillion.groww,play,1,,Account opening stuck after PAN upload for almost a week.,2026-10-01,en_IN
+gp-007,com.nextbillion.groww,play,4,,Customer care resolved my demat mapping issue in one chat.,2026-09-29,en_IN
+gp-008,com.nextbillion.groww,play,2,,Order placement shows pending then cancels without explaining why.,2026-09-28,en_IN
+gp-009,com.nextbillion.groww,play,1,,Cannot complete Aadhaar eSign for KYC on Android 14.,2026-09-26,en_IN
+gp-010,com.nextbillion.groww,play,5,,Loved the IPO apply flow this week very straightforward.,2026-09-25,en_IN
+gp-011,com.nextbillion.groww,play,2,,Add money via netbanking redirects and then balance does not update.,2026-09-22,en_IN
+gp-012,com.nextbillion.groww,play,3,,Statements are hard to find and the PDF download fails on mobile data.,2026-09-20,en_IN
+gp-013,com.nextbillion.groww,play,1,,Bank withdrawal rejected saying invalid IFSC though it is correct.,2026-09-18,en_IN
+gp-014,com.nextbillion.groww,play,4,,Watchlist and price alerts work well for my portfolio.,2026-09-16,en_IN
+gp-015,com.nextbillion.groww,play,2,,Onboarding asks for the same address proof twice after I already uploaded it.,2026-09-14,en_IN
+gp-016,com.nextbillion.groww,play,1,,Live prices lag by minutes compared with other brokers.,2026-09-12,en_IN
+gp-017,com.nextbillion.groww,play,5,,SIP setup for index funds took under two minutes.,2026-09-10,en_IN
+gp-018,com.nextbillion.groww,play,2,,Payment status stuck on processing after UPI collect request expired.,2026-09-08,en_IN
+gp-019,com.nextbillion.groww,play,3,,App crashes when opening F&O option chain on mid-range phones.,2026-09-05,en_IN
+gp-020,com.nextbillion.groww,play,1,,KYC shows verified on web but mobile still blocks trading.,2026-09-03,en_IN
+gp-021,com.nextbillion.groww,play,2,,Settlement of equity sell credit is unclear in the balance breakdown.,2026-09-01,en_IN
+gp-022,com.nextbillion.groww,play,4,,Good educational content for first-time mutual fund investors.,2026-08-29,en_IN
+gp-023,com.nextbillion.groww,play,1,,Unable to place GTT order it keeps saying something went wrong.,2026-08-27,en_IN
+gp-024,com.nextbillion.groww,play,2,,Signup OTP never arrives and resend is disabled for ten minutes.,2026-08-25,en_IN
+gp-025,com.nextbillion.groww,play,3,,Portfolio gains look wrong after a corporate action for one stock.,2026-08-22,en_IN
+gp-026,com.nextbillion.groww,play,5,,Fast account funding with UPI when it works.,2026-08-20,en_IN
+gp-027,com.nextbillion.groww,play,1,,Withdrawal initiated but money never reached my salary account.,2026-08-18,en_IN
+gp-028,com.nextbillion.groww,play,2,,DigiLocker KYC fetch fails and there is no offline upload alternative shown.,2026-08-15,en_IN
+gp-029,com.nextbillion.groww,play,4,,Clean design for tracking SIPs and goals.,2026-08-13,en_IN
+gp-030,com.nextbillion.groww,play,2,,Market depth screen is blank during the first fifteen minutes after open.,2026-08-11,en_IN
+gp-031,com.nextbillion.groww,play,1,,Payments page loops after selecting my bank for adding funds.,2026-08-08,en_IN
+gp-032,com.nextbillion.groww,play,3,,Need clearer messaging when an IPO bid is not accepted.,2026-08-06,en_IN
+gp-033,com.nextbillion.groww,play,2,,Re-KYC banner blocks the home screen even after documents were submitted.,2026-08-04,en_IN
+gp-034,com.nextbillion.groww,play,5,,Switched from another broker onboarding was smoother than expected.,2026-08-01,en_IN
+gp-035,com.nextbillion.groww,play,1,,Cannot download account statement for last quarter from the app.,2026-07-30,en_IN
+gp-036,com.nextbillion.groww,play,2,,Limit order fills late and the app shows a confusing average price.,2026-07-28,en_IN
+gp-037,com.nextbillion.groww,play,4,,Notifications for order executed are timely.,2026-07-25,en_IN
+gp-038,com.nextbillion.groww,play,1,,UPI autopay for SIP cancelled itself without notifying me.,2026-07-22,en_IN
+gp-039,com.nextbillion.groww,play,2,,Help section does not explain why my withdrawal is under review.,2026-07-20,en_IN
+gp-040,com.nextbillion.groww,play,3,,Search for stocks sometimes shows stale results until I force close the app.,2026-07-17,en_IN
